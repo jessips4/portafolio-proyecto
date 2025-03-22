@@ -1,85 +1,186 @@
-.Proyecto {
-  max-width: 1200px;
-  margin: 0 auto;
-  /* Centrar la sección horizontalmente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #F2EBF0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  transition: 0.3s;
 }
 
 h1 {
-  font-family: 'Young Serif';
+  font-family:"Merriweather", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 50px;
 }
 
 h2 {
-  font-family: 'Libre Caslon Display';
+  font-family:"Winky Sans", sans-serif;
+  font-size: 40px;
 }
 
+h3{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 h4 {
   font-family: 'Kurale';
 }
 
 p {
-  font-family: 'Cormorant Infant';
+  font-family: 'Poppins', sans-serif;
 }
 
-header {
-  font-family: 'Cormorant Infant';
-  background-color: #f3c2cb;
+#app {
+  color: #f540a4
 }
-header nav{
-  width: 100%;
-  height: 60px;
-  font-size: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+
+h4 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.skill {
+  flex-direction: column;
   align-items: center;
-  position: fixed;
-  z-index: 1;
-  background-color: #f3c2cb;
+  margin: 10px;
 }
 
-.nav-item a{
-  color: #734854;
+.skill-card {
+  background-color: rgb(214, 214, 230);
+  width: 70px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
 }
 
-.perfil{
-  color: #734854;
+.skill-icon {
+  width: 50px;
+  height: auto;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
-.nav-item a:hover{
-  color: #292528;
+.skill-icon:hover {
+  animation: bounce 0.5s infinite;
 }
 
-#app{
-  color:#734854
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.habilidades{
-  color: bisque;
-}
 
-
-.icon-link{
-  color: #402924;
-}
-
-.card{
-  background-color: #D9A7B0;
-}
-
-.contacto-caja{
-  background-color: #F2CBBD;
-}
-
-.btn{
-  background-color: #D9A7B0;
-  color: #402924;
-}
-
-footer i:hover{
-  background-color: #378BA4;
+footer i:hover {
+  background-color: #8976f7;
   color: white;
+}
+
+.timeline {
+  display: flex;
+  justify-content:last baseline;
+  align-items: center;
+}
+
+.timeline .timeline-item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 1rem
+}
+
+
+.timeline .timeline-content {
+  width: 10rem;
+  text-align: center
+}
+
+.timeline .timeline-content .item-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.item-circle {
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.item-circle:hover {
+  transform: scale(2.0);
+  background-color: #b8d0f8;
+}
+
+.timeline-item::after {
+  content: '';
+  width: 80%;
+  height: 2px;
+  border-top: .25rem dotted #b95d90;
+  position: absolute;
+  top: 8px;
+  left: 70%;
+  z-index: 1;
+}
+
+.timeline-content p {
+  margin-top: 10px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  background-color: #e1b8e7;
+}
+.card h5 {
+  color: #a80dad;
+}
+.card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.card-img{
+  height: 80px;
+  width: 80px;
+}
+i{
+  font-size: small;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    justify-content: space-between;
+    overflow-x: hidden; 
+    cursor: pointer;
+  }
 }
